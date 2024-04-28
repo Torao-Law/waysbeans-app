@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.max-lines-3 {
+  max-height: calc(1.5em * 3); /* 3 baris x tinggi satu baris */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.multi-line-cell {
+  min-height: calc(1.5em * 3); /* Tinggi minimum untuk 3 baris */
+}
