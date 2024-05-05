@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Chart from "../elements/chartElement";
 
 const Navbar = () => {
+  
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
   const [state, _] = useContext(UserContext);

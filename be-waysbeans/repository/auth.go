@@ -25,7 +25,7 @@ func (r *repository) Login(email string) (models.User, error) {
 
 func (r *repository) CheckAuth(ID int) (models.User, error) {
 	var user models.User
-	err := r.db.Where(&models.User{ID: ID}).First(&user).Error
+	err := r.db.Where(&models.User{ID: ID}).Preload("Prod").First(&user).Error
 
 	return user, err
 }

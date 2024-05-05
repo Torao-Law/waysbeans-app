@@ -31,7 +31,7 @@ const SubAmount = ({ total }) => {
         <h1 className="font-bold text-isPrimary mb-1">Shopping summary</h1>
         <div className="flex justify-between">
           <h1>Total</h1>
-          <p className="font-bold">{formatNumber(total)}</p>
+          <p className="font-bold">{ total ? formatNumber(total) : "-"}</p>
         </div>
       </div>
 

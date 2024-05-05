@@ -10,13 +10,13 @@ const CardProduct = (props) => {
         <img
           src={props.image}
           alt="img-product"
-          className="rounded-t-xl h-full"
+          className="rounded-t-xl h-36 w-full object-fill"
         />
       </div>
 
-      <div className="flex-1 px-2 mt-2">
+      <div className="flex-1 px-4 mt-2">
         <div className="flex flex-col justify-start">
-          <p>{props.name}</p>
+          <p className="line-clamp-2">{props.name}</p>
           <p className="font-bold ">{props.price}</p>
           <p>Qty : {props.qty}</p>
         </div>

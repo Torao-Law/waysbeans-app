@@ -8,6 +8,7 @@ import CardProduct from "../elements/cardProduct";
 import useCounter from "../utils/counter";
 import apiConfig from "../libs/api";
 import { useQuery } from "@tanstack/react-query";
+import Swal from 'sweetalert2'
 
 const DetailProductPage = () => {
   const { id } = useParams();
@@ -30,9 +31,19 @@ const DetailProductPage = () => {
         order: count,
         sub_amount: subAmount 
       }
-      const response = await apiConfig.post("/cart", dataCart, config)
+      await apiConfig.post("/cart", dataCart, config)
 
-      console.log(response);
+      Swal.fire({
+        title: 'success!',
+        text: 'Success add item to cart!',
+        icon: 'success',
+        showCloseButton: true,
+        confirmButtonText: 'Show Cart',
+      }).then((result) => {
+        if (result.value) {
+          window.location.href = `/transactions`
+        }
+      })
     } catch (error) {
       throw error
     }

@@ -16,8 +16,8 @@ const ModalAddProduct = ({ isOpen, onClose }) => {
 
   return (
     <Modal
-      className="w-2/5 h-5/6 bg-white p-10 mx-auto rounded shadow-2xl overflow-auto"
-      overlayClassName="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50 "
+      className="react-modal w-2/5 h-5/6 bg-white p-10 mx-auto rounded shadow-2xl overflow-auto"
+      overlayClassName="react-modal-overlay fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50 "
       isOpen={isOpen}
       onRequestClose={onCancelandCloseModal}
       ariaHideApp={false}

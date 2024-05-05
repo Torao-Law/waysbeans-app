@@ -7,7 +7,6 @@ import (
 	"time"
 	cartdto "waysbeans-app/dto/cart"
 	resultdto "waysbeans-app/dto/result"
-	transactiondto "waysbeans-app/dto/transaction"
 	"waysbeans-app/models"
 	"waysbeans-app/repository"
 
@@ -120,14 +119,6 @@ func (h *cartControllers) CreateCart(c *gin.Context) {
 
 	if errTrans != nil {
 		var err error
-		request := new(transactiondto.CreateTransaction)
-		if err := c.Bind(&request); err != nil {
-			c.JSON(http.StatusInternalServerError, resultdto.ErrorResult{
-				Code:    http.StatusInternalServerError,
-				Message: err.Error(),
-			})
-			return
-		}
 		var transactionIsMatch = false
 		var transactionId int
 		for !transactionIsMatch {
@@ -151,7 +142,6 @@ func (h *cartControllers) CreateCart(c *gin.Context) {
 				Code:    http.StatusInternalServerError,
 				Message: err.Error(),
 			})
-			return
 		}
 	}
 
@@ -172,8 +162,6 @@ func (h *cartControllers) CreateCart(c *gin.Context) {
 			resultdto.ErrorResult{Code: http.StatusInternalServerError, Message: err.Error()})
 		return
 	}
-
-	fmt.Println(transactionActive)
 
 	data := models.Cart{
 		ProductID:     request.ProductID,

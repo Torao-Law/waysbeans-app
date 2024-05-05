@@ -44,35 +44,22 @@ const Product = () => {
             );
           })}
         </div>
-        <div className="flex justify-between mt-4">
-          <button onClick={prevPage} disabled={page === 1}>
+        <div className="flex justify-center my-4">
+          <button
+            className="border border-2 border-gray-400 rounded py-1 px-8 cursor-pointer me-4"
+            onClick={prevPage}
+            disabled={page === 1}
+          >
             Previous
           </button>
-          <button onClick={nextPage}>Next</button>
+          <button
+            className="border border-2 border-gray-400 rounded py-1 px-8 cursor-pointer"
+            onClick={nextPage}
+          >
+            Next
+          </button>
         </div>
       </div>
-
-      {/* <div>
-        <h1 className="font-bold text-2xl mb-8 underline text-isPrimary">
-          List Product
-        </h1>
-        <div className="grid grid-rows-4 grid-cols-5 justify-items-center">
-          {getProducts?.map((data) => {
-            return (
-              <div key={data.id} className="mb-6">
-                <CardProduct
-                  key={data.id}
-                  name={data.name}
-                  image={data.image}
-                  price={data.price}
-                  category={data.category}
-                  qty={data.qty}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div> */}
 
       <div>
         <Footer />
